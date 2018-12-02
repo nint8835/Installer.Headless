@@ -30,7 +30,7 @@ namespace MTGInstaller {
 
 		public Dictionary<string, ETGModComponent> Components;
 
-		public string BaseDomain = "modthegungeon.zatherz.eu";
+		public string BaseDomain = "nint8835.github.io/MTGFixed/reloaded";
 		public string BaseURL;
 		public string ComponentsURL;
 		public string GungeonMetadataURL;
@@ -44,6 +44,7 @@ namespace MTGInstaller {
 		}
 
 		public Downloader(bool force_http = false, bool offline = false) {
+		    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 			if (force_http) BaseURL = $"http://{BaseDomain}";
 			else BaseURL = $"https://{BaseDomain}";
 
